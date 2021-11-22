@@ -5,3 +5,13 @@ A text card for Home Assistant that will call a service as you type.
 
 Uses [lovelace-text-input-row](https://github.com/gadgetchnnel/lovelace-text-input-row) by [@gadgetchnnel](https://github.com/gadgetchnnel) and is built for use with [esphome-blekeyboard](https://github.com/dmamontov/esphome-blekeyboard) by [@dmamontov](https://github.com/dmamontov)
 
+## Card Config
+| Name | Requirement | Description | Default |
+|--|--|--|--|
+| type | Required | `custom:live-text-update` |
+| service | Required | Service root. Ex: `esphome`
+| domain | Required | Service domain. Ex: `blekeyboard`
+| placeholder | Optional | Text to show when box is empty. Ex: `Search` | `Search`
+
+
+
