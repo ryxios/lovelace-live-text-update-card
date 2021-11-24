@@ -1,6 +1,6 @@
 {
     "lovelace-live-text-update-card": {
-      "version": "0.0.1",
+      "version": "0.1.0",
       "remote_location": "https://raw.githubusercontent.com/jonathanrobichaud4/lovelace-live-text-update-card/main/lovelace-live-text-update-card.js",
       "visit_repo": "https://github.com/jonathanrobichaud4/lovelace-live-text-update-card/",
       "changelog": "https://github.com/jonathanrobichaud4/lovelace-live-text-update-card/"
