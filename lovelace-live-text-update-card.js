@@ -3,6 +3,7 @@ class LiveTextUpdate extends Polymer.Element {
   set hass(hass) {
     this._hass = hass;
     const service = this._config.service
+    const entity = this._config.entity
     const placeholder = this._config.placeholder
     const placeholder_enabled = this._config.placeholder_enabled
     const clear_button_enabled = this._config.clear_button_enabled
@@ -50,6 +51,10 @@ class LiveTextUpdate extends Polymer.Element {
         throw new Error('You need to define a service');
       }
 
+      if (!config.entity) {
+        throw new Error('You need to define a entity');
+      }
+
       /*if (config.service.indexOf('.') == -1) {
         throw new Error('You need to define a service');
       }*/
@@ -82,9 +87,10 @@ class LiveTextUpdate extends Polymer.Element {
     var domain = this.$.domain
     const newValue = this.$.keyValue;
     const serviceData = {
-      delay_ms: 0,
-      message: newValue,
-    };
+      "entity_id": this._config.entity,
+      "media_content_type": "send_text",
+      "media_content_id": newValue
+    }};
 
     this._hass.callService(service_root, domain, serviceData);
   }
